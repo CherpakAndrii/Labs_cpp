@@ -1,26 +1,31 @@
-﻿#include <math.h>									//підключаємо необхідні бібліобеки
+#include <math.h>
 #include <stdio.h>
 #include <iostream>
 using namespace std;
-int main()											//ініціалізуємо функцію maim()
+int main()
 {
-	double a, b, c, p, S, R, r, bisA, bisB, bisC;	//ініціалізуємо змінні 
-	cout << "a = "; cin >> a;						//вводимо змінні
+	double a, b, c, p, S, R, r, bisA, bisB, bisC; 
+	cout << "a = "; cin >> a;
 	cout << "b = "; cin >> b;
 	cout << "c = "; cin >> c;
-	p = (a + b + c) / 2;							//Обчислюємо півпериметр
-	S = sqrt(p * (p - a) * (p - b) * (p - c));		//Обчислюємо площу
-	r = S / p;										//Обч. радіус вписаного кола
-	R = a * b * c / (4 * S);						//Обч. радіус описаного кола
-	bisA = sqrt(b * c * (a + b + c) * (b + c - a)) / (b + c);	//обчислюємо бісектриси
-	bisB = sqrt(a * c * (a + b + c) * (a + c - b)) / (a + c);
-	bisC = sqrt(a * b * (a + b + c) * (a + b - c)) / (a + b);
-	cout << "\nbisector1 = " << bisA << endl;		//виводимо необхідні дані
-	cout << "\nbisector2 = " << bisB << endl;
-	cout << "\nbisector3 = " << bisC << endl;
-	cout << "\nradius of the inscribed circle = " << r << endl;
-	cout << "\nradius of the circumscribed circle = " << R << endl;
-	cout << endl;									// два порожніх рядки "для краси"
-	cout << endl;
-	system("pause");								// системна пауза, щоб користувач встиг зчитати дані
+	if (a + b > c && b + c > a && a + c > b && a > 0 && b > 0 && c > 0)
+	{
+		p = (a + b + c) / 2;
+		S = sqrt(p * (p - a) * (p - b) * (p - c));
+		r = S / p;
+		R = a * b * c / (4 * S);
+		bisA = sqrt(b * c * (a + b + c) * (b + c - a)) / (b + c);
+		bisB = sqrt(a * c * (a + b + c) * (a + c - b)) / (a + c);
+		bisC = sqrt(a * b * (a + b + c) * (a + b - c)) / (a + b);
+		printf("\nbisector1 = %.3f\n", bisA);
+		printf("\nbisector2 = %.3f\n", bisB);
+		printf("\nbisector3 = %.3f\n", bisC);
+		printf("\nradius of the inscribed circle = %.3f\n", r);
+		printf("\nradius of the circumscribed circle = %.3f\n", R);
+		cout << endl;
+		cout << endl;
+	}
+	else
+		cout << "Invalid input" << endl;
+	system("pause");
 }
