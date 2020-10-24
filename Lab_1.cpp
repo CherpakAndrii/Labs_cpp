@@ -8,7 +8,14 @@ int main()
 	cout << "a = "; cin >> a;
 	cout << "b = "; cin >> b;
 	cout << "c = "; cin >> c;
-	if (a + b > c && b + c > a && a + c > b && a > 0 && b > 0 && c > 0)
+	if (cin.fail())
+	{
+		cin.clear();
+		system("cls");
+		cout << "\nInvalid input\n"<<endl;
+		exit(0);
+	}
+	else if (a + b > c && b + c > a && a + c > b && a > 0 && b > 0 && c > 0)
 	{
 		p = (a + b + c) / 2;
 		S = sqrt(p * (p - a) * (p - b) * (p - c));
