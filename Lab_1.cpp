@@ -10,7 +10,6 @@ int main()
 	cout << "c = "; cin >> c;
 	if (cin.fail())
 	{
-		cin.clear();
 		system("cls");
 		cout << "\nInvalid input\n"<<endl;
 		exit(0);
