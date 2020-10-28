@@ -1,25 +1,26 @@
+#include <iostream>
 #include <stdio.h>
 #include <iostream>
 using namespace std;
 int main()
 {
-	double a, b, c;
-	cout << "a = "; cin >> a;
-	cout << "b = "; cin >> b;
-	cout << "c = "; cin >> c;
+	double a, b, c, d;
+	cout << "Input the length of the first rectangle: "; cin >> a;
+	cout << "Input the width of the first rectangle: "; cin >> b;
+	cout << "Input the length of the second rectangle: "; cin >> c;
+	cout << "Input the width of the second rectangle: "; cin >> d;
 	if (cin.fail())
 	{
 		system("cls");
-		cout << "\nInvalid input\n"<<endl;
+		cout << "\nInvalid input\n" << endl;
 		exit(0);
 	}
-	if (a == b || b == c || a == c)
+	else if (a <= c && b <= d || a <= d && b <= c)
 	{
-		cout << "\nThere is some identical numbers";
-		cout << endl;
+		cout << "\nWe can fit the first rectangle into the second";
 		cout << endl;
 	}
 	else
-		cout << "All numbers are different" << endl;
+		cout << "\nWe can't fit the first rectangle into the second" << endl;
 	system("pause");
 }
