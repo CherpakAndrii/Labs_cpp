@@ -15,6 +15,6 @@ string get_word(string str, char c, int &count) {
 
 void check(string s, char c, int& count) {
 	int l = s.length();
-	if (!(s[0] == c) && !(s[l - 1] == c)) cout << s;
+	if (!(s[0] == c) && !(s[l - 1] == c)) cout << s << " ";
 	else count++;
 }
