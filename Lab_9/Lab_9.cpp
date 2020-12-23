@@ -10,6 +10,7 @@ int main() {
 	char c;
 	cout << "Input a string: ";
 	getline(cin, str);
+	str += " ";
 	cout << "\nInput the character:"; cin >> c;
 	cout << endl;
 	while (str.length() > 0) { str = get_word(str, c, n); }
